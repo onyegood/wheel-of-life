@@ -3,7 +3,7 @@ let heavyliftURL;
 let baseUrlServices;
 let socketBase;
 
-if (window.location.href.includes("npvn-v2.herokuapp.com")) {
+if (window.location.href.includes("npa-admin.herokuapp.com")) {
   newBase = "https://api.ncreative.staging.bluegreensoft.com/v1/ncreative/";
   heavyliftURL = "https://api.ncreative.staging.bluegreensoft.com/v1/ncreative/exports";
   baseUrlServices = "https://nsio-services.herokuapp.com/v1/";
@@ -17,7 +17,7 @@ if (window.location.href.includes("localhost")) {
   socketBase = "https://nsio-services.herokuapp.com";
 }
 
-if (window.location.href.includes("ncreativeadmin.npvn.ng")) {
+if (window.location.href.includes("npa.ng")) {
   newBase = "https://api.ncreative.npvn.ng/v1/ncreative/";
   heavyliftURL = "https://api.ncreative.npvn.ng/v1/ncreative/exports";
   baseUrlServices = "https://nsio-services.herokuapp.com/v1/";
