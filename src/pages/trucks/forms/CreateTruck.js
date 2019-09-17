@@ -1,0 +1,44 @@
+import React from "react";
+import { connect } from "react-redux";
+import { Formik, withFormik } from "formik";
+import { TruckValidation } from "../validator/TruckValidation";
+import { clearMessage } from "../../../redux/actions/message";
+import { updateUserRequest } from "../../../redux/actions/users";
+import TruckForm from "./TruckForm";
+
+const CreateTruck = (props) => {
+  return (
+  <>
+  {/* {message && message.message ? <p className="alert alert-danger">{message.message}</p> : null} */}
+    <TruckForm {...props} />
+  </>
+  );
+};
+
+const FormikConnect = withFormik({
+  mapPropsToValues({ name }) {
+    return {
+      name: name || ""
+    };
+  },
+  validationSchema: TruckValidation(),
+  handleSubmit: async ({ name }, { props, resetForm, setErrors, setSubmitting }) => {
+    props.submit(name);
+    resetForm();
+    setSubmitting(false);
+  }
+});
+
+const mapDispatchToProps = {
+  submit: updateUserRequest,
+  clearMessage
+};
+
+const mapStateToProps = state => {
+  return {
+    // roles: state.roles.roles,
+    // message: state.message.message
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormikConnect(CreateTruck));

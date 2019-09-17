@@ -1,0 +1,20 @@
+.LoginCard {
+    background-color: #ffffff;
+    padding: 20px 10px 40px 10px;
+    border-radius: 10px;
+}
+.MainBGSignup{
+    height: 100%;
+    padding: 4%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.MainBGSignin{
+    height: 800px;
+    min-height: 100%;
+    padding: 10%;
+    width: 100%;
+    margin-bottom: 16%;
+    /* overflow: hidden; */
+}

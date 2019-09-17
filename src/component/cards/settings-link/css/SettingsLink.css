@@ -1,0 +1,15 @@
+.main-content .settings .is-active {
+  background: transparent;
+  color: #031a4d;
+  border-color: transparent;
+}
+
+.card-style:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.active-background {
+  background: #031b4d;
+  color: #ffffff;
+}

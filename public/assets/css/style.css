@@ -1,0 +1,66 @@
+.stats-key{
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+.stats-key ul{
+
+}
+
+.stats-key ul li, .trucks-key ul li{
+  float: left;
+  padding-right: 20px;
+  margin-top: 10px;
+  list-style: none;
+  font-size: 11px;
+}
+.square-key{
+  width: 10px;
+  height: 10px;
+  background: #e83e8c;
+  float: left;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+.analytics{
+  min-height: 420px;
+}
+.inside-label{
+
+}
+.inside-label label{
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+.inside-label h4{
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.trucks-key{
+  margin: auto;
+  text-align: center;
+}
+
+.trucks-key .square-key{
+  margin-top: 2px;
+}
+
+.auth-page{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.btn-success-onye{
+  background: #00711F;
+}
+
+.auth-page a{
+  color: #737272;
+}
+
+.disabled-form, .disabled-form .btn-success-onye {
+  background: #ffffff;
+  color: #ddd;
+}

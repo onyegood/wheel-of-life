@@ -1,0 +1,11 @@
+.main-content .is-active {
+  background: #4caf50;
+  color: #ffffff;
+  border-color: #4caf50;
+}
+
+
+.card {
+  -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.32);
+}
