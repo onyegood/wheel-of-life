@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { LOGOUT_USER_REQUEST } from "../types/auth";
 import auth from "./auth";
-import users from "./users";
+// import users from "./users";
 // import approvals from "./approvals";
 // import message from "./message";
 // import permissions from "./permissions";
@@ -11,8 +11,7 @@ import users from "./users";
 // import announcements from "./announcement";
 
 const appReducer = combineReducers({
-  auth,
-  users
+  auth
 });
 
 // Reset Redux Store on Logout

@@ -28,7 +28,6 @@ import {
   ADD_USER_REQUEST,
   DELETE_USER_REQUEST,
   UPDATE_USER_REQUEST,
-  UPDATE_CENTRE_ADMIN_REQUEST,
   CREATE_NEW_USER_REQUEST,
   FETCH_USER_REQUEST
 } from "../types/users";
@@ -38,7 +37,6 @@ import {
   addUserSaga,
   deleteUserSaga,
   updateUserSaga,
-  updateCentreAdminSaga,
   createNewUserSaga,
   fetchAdminUserSaga
 } from "./usersSaga";
@@ -93,7 +91,6 @@ export default function* rootSaga() {
   yield takeLatest(ADD_USER_REQUEST, addUserSaga);
   yield takeLatest(DELETE_USER_REQUEST, deleteUserSaga);
   yield takeLatest(UPDATE_USER_REQUEST, updateUserSaga);
-  yield takeLatest(UPDATE_CENTRE_ADMIN_REQUEST, updateCentreAdminSaga);
 
   //Roles
   yield takeLatest(FETCH_ROLES_REQUEST, fetchRolesSaga);

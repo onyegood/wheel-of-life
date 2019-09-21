@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { resetErrorMessage } from "../../redux/actions/auth";
 import history from "../../history";
 import { fetchCurrentUserRequest, forgotPasswordRequest } from "../../redux/actions/auth";
 import { toast } from "react-toastify";
@@ -185,7 +184,6 @@ function mapStateToProps(state) {
 
 const mapDispatchToState = {
     fetchCurrentUserRequest,
-    resetErrorMessage,
     submit: forgotPasswordRequest,
     clearMessage
 }

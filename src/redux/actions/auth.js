@@ -12,7 +12,6 @@ import {
   USER_AVATAR_UPLOAD_REQUEST,
   USER_AVATAR_UPLOAD_SUCCESS,
   USER_AVATAR_UPLOAD_FAILURE,
-  ERROR_MSG_RESET,
   CHANGE_PASSWORD_REQUEST,
   CHANGE_PASSWORD_SUCCESS,
   CHANGE_PASSWORD_FAILURE,
@@ -24,35 +23,33 @@ import {
   FORGOT_PASSWORD_FAILURE
 } from "../types/auth";
 
-export const createUserRequest = user => ({ type: CREATE_USER_REQUEST, user });
-export const createUserFailure = errors => ({ type: CREATE_USER_FAILURE, errors });
+export const createUserRequest = payload => ({ type: CREATE_USER_REQUEST, payload });
+export const createUserFailure = payload => ({ type: CREATE_USER_FAILURE, payload });
 
-export const userLoggedIn = user => ({ type: USER_LOGGED_IN, user });
+export const userLoggedIn = payload => ({ type: USER_LOGGED_IN, payload });
 export const userLoggedOut = () => ({ type: USER_LOGGED_OUT });
 
-export const loginUserRequests = user => ({ type: LOGIN_USER_REQUEST, user });
-export const loginUserFailure = error => ({ type: LOGIN_USER_FAIL, error });
+export const loginUserRequests = payload => ({ type: LOGIN_USER_REQUEST, payload });
+export const loginUserFailure = payload => ({ type: LOGIN_USER_FAIL, payload });
 
-export const resetErrorMessage = error => ({ type: ERROR_MSG_RESET, error });
-
-export const logoutUserRequest = user => ({ type: LOGOUT_USER_REQUEST, user });
+export const logoutUserRequest = payload => ({ type: LOGOUT_USER_REQUEST, payload });
 
 export const fetchCurrentUserRequest = () => ({ type: FETCH_CURRENT_USER_REQUEST });
-export const fetchCurrentUserSuccess = user => ({ type: FETCH_CURRENT_USER_SUCCESS, user });
-export const fetchCurrentUserFailure = errors => ({ type: FETCH_CURRENT_USER_FAILURE, errors });
+export const fetchCurrentUserSuccess = payload => ({ type: FETCH_CURRENT_USER_SUCCESS, payload });
+export const fetchCurrentUserFailure = payload => ({ type: FETCH_CURRENT_USER_FAILURE, payload });
 
 export const userAvatarUploadRequest = payload => ({ type: USER_AVATAR_UPLOAD_REQUEST, payload });
 export const userAvatarUploadSuccess = payload => ({ type: USER_AVATAR_UPLOAD_SUCCESS, payload });
-export const userAvatarUploadFailure = errors => ({ type: USER_AVATAR_UPLOAD_FAILURE, errors });
+export const userAvatarUploadFailure = payload => ({ type: USER_AVATAR_UPLOAD_FAILURE, payload });
 
 export const changePasswordRequest = payload => ({ type: CHANGE_PASSWORD_REQUEST, payload });
 export const changePasswordSuccess = payload => ({ type: CHANGE_PASSWORD_SUCCESS, payload });
-export const changePasswordFailure = errors => ({ type: CHANGE_PASSWORD_FAILURE, errors });
+export const changePasswordFailure = payload => ({ type: CHANGE_PASSWORD_FAILURE, payload });
 
 export const resetPasswordRequest = payload => ({ type: RESET_PASSWORD_REQUEST, payload });
 export const resetPasswordSuccess = payload => ({ type: RESET_PASSWORD_SUCCESS, payload });
-export const resetPasswordFailure = errors => ({ type: RESET_PASSWORD_FAILURE, errors });
+export const resetPasswordFailure = payload => ({ type: RESET_PASSWORD_FAILURE, payload });
 
 export const forgotPasswordRequest = payload => ({ type: FORGOT_PASSWORD_REQUEST, payload });
 export const forgotPasswordSuccess = payload => ({ type: FORGOT_PASSWORD_SUCCESS, payload });
-export const forgotPasswordFailure = errors => ({ type: FORGOT_PASSWORD_FAILURE, errors });
+export const forgotPasswordFailure = payload => ({ type: FORGOT_PASSWORD_FAILURE, payload });

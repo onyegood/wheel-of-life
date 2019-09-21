@@ -30,7 +30,7 @@ export function* fetchPermissionsSaga() {
 
 export function* addPermissionSaga(action) {
   try {
-    const response = yield call(addPermission, action);
+    const response = yield call(addPermission, action.payload);
     yield put(addPermissionSuccess(response.data));
     yield put(fetchPermissionsRequest());
     yield put(messageHandler(response));

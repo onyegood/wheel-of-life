@@ -21,9 +21,6 @@ class LineChartDateTimeComponent extends Component {
 
      const {labels, values1} = this.props;
 
-     console.log('labels', labels);
-     console.log('values1', values1);
-
       const propsData = {
           
         labels: labels,

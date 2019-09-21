@@ -4,11 +4,9 @@ import {
   addUserSuccess,
   updateUserSuccess,
   fetchUsersRequest,
-  updateCentreAdminSuccess,
   createNewUserSuccess,
   fetchUserSuccess,
-  fetchUserRequest,
-  createNewCentreAdminSuccess
+  fetchUserRequest
 } from "../actions/users";
 import { 
   users, 
@@ -16,9 +14,7 @@ import {
   createUser, 
   addUser, 
   updateUser, 
-  deleteUser, 
-  updateCentreAdmin, 
-  createNewCentreAdmin
+  deleteUser
 } from "../../api/users";
 import { messageHandler, errorHandler } from "../../helpers";
 
@@ -77,26 +73,6 @@ export function* deleteUserSaga(action) {
   try {
     const response = yield call(deleteUser, action);
     yield put(fetchUsersRequest());
-    yield put(messageHandler(response));
-  } catch (error) {
-    yield put(errorHandler(error));
-  }
-}
-
-export function* updateCentreAdminSaga(action) {
-  try {
-    const response = yield call(updateCentreAdmin, action);
-    yield put(updateCentreAdminSuccess(response.data.data));
-    yield put(messageHandler(response));
-  } catch (error) {
-    yield put(errorHandler(error));
-  }
-}
-
-export function* createNewCentreAdminSaga(action) {
-  try {
-    const response = yield call(createNewCentreAdmin, action);
-    yield put(createNewCentreAdminSuccess(response.data));
     yield put(messageHandler(response));
   } catch (error) {
     yield put(errorHandler(error));

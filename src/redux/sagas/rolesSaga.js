@@ -29,7 +29,7 @@ export function* fetchRolesSaga() {
 
 export function* addRoleSaga(action) {
   try {
-    const response = yield call(addRole, action.role);
+    const response = yield call(addRole, action.payload);
     yield put(addRoleSuccess(response.data));
     yield put(fetchRolesRequest());
     yield put(messageHandler(response));

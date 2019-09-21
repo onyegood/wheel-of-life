@@ -96,8 +96,6 @@ const FormikConnect = withFormik({
       resetForm();
       setSubmitting(false);
     }, 500);
-
-    
   }
 });
 

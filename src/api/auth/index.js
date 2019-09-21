@@ -2,16 +2,6 @@ import axios from "axios";
 import { newBase } from "../../base/nBase";
 import { getUserId } from "../../utils/getUserId";
 
-
-const currentUser = async () => {
-  const response = await axios.get(`${newBase}admin/${getUserId()}`);
-  const data = await response.data;
-  if (response.status > 400) {
-    throw new Error(data.errors);
-  }
-  return data;
-};
-
 const login = async payload => {
   const response = await axios.post(`${newBase}admin/login`, payload);
   const data = await response.data;
@@ -49,7 +39,7 @@ const resetPassword = async payload => {
 };
 
 const forgotPassword = async payload => {
-  const response = await axios.post(`${newBase}admin/resetAdminPassword`, payload);
+  const response = await axios.post(`${newBase}admin/forgotAdminPassword`, payload);
   const data = await response.data;
   if (response.status > 400) {
     throw new Error(data.errors);
@@ -66,6 +56,14 @@ const uploadAvatar = async payload => {
   return data;
 };
 
+const currentUser = async () => {
+  const response = await axios.get(`${newBase}admin/${getUserId()}`);
+  const data = await response.data;
+  if (response.status > 400) {
+    throw new Error(data.errors);
+  }
+  return data;
+};
 
 export {
   currentUser,

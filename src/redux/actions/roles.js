@@ -13,35 +13,35 @@ import {
   UPDATE_ROLE_FAILURE
 } from "../types/roles";
 
-export const fetchRolesRequest = roles => ({
+export const fetchRolesRequest = payload => ({
   type: FETCH_ROLES_REQUEST,
-  roles
+  payload
 });
 
-export const fetchRolesSuccess = roles => ({
+export const fetchRolesSuccess = payload => ({
   type: FETCH_ROLES_SUCCESS,
-  roles
+  payload
 });
 
-export const fetchRolesFailed = errors => ({
+export const fetchRolesFailed = payload => ({
   type: FETCH_ROLES_FAILED,
-  errors
+  payload
 });
 
-export const addRoleRequest = role => ({type: ADD_ROLE_REQUEST, role});
+export const addRoleRequest = payload => ({type: ADD_ROLE_REQUEST, payload});
 
-export const addRoleSuccess = role => ({type: ADD_ROLE_SUCCESS, role});
+export const addRoleSuccess = payload => ({type: ADD_ROLE_SUCCESS, payload});
 
-export const addRoleFailure = errors => ({type: ADD_ROLE_FAILURE, errors});
+export const addRoleFailure = payload => ({type: ADD_ROLE_FAILURE, payload});
 
-export const updateRoleRequest = (role, _id) => ({type: UPDATE_ROLE_REQUEST, role, _id});
+export const updateRoleRequest = (payload, _id) => ({type: UPDATE_ROLE_REQUEST, payload, _id});
 
-export const updateRoleSuccess = (role, _id) => ({type: UPDATE_ROLE_SUCCESS, role, _id});
+export const updateRoleSuccess = (payload, _id) => ({type: UPDATE_ROLE_SUCCESS, payload, _id});
 
-export const updateRoleFailure = (errors) => ({type: UPDATE_ROLE_FAILURE, errors});
+export const updateRoleFailure = (payload) => ({type: UPDATE_ROLE_FAILURE, payload});
 
 export const deleterole = (_id) => ({type: DELETE_ROLE_REQUEST, _id});
 
 export const deleteRoleSuccess = (_id) => ({type: DELETE_ROLE_SUCCESS, _id});
 
-export const deleteRoleFailure = (errors) => ({type: DELETE_ROLE_FAILURE, errors});
+export const deleteRoleFailure = (payload) => ({type: DELETE_ROLE_FAILURE, payload});

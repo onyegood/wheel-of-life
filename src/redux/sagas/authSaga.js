@@ -48,7 +48,7 @@ export function* createUserSaga(action) {
 
 export function* loginUserSaga(action) {
   try {
-    const response = yield call(login, action.user);
+    const response = yield call(login, action.payload);
     localStorage.setItem("token", response.token);
     localStorage.setItem("@r", response.admin.role);
     yield put(userLoggedIn(response.admin));
@@ -98,6 +98,7 @@ export function* forgotPasswordSaga(action) {
     yield put(messageHandler(response));
   } catch (error) {
     yield put(errorHandler(error));
+    console.log("Hello 3");
   }
 }
 
