@@ -1,46 +1,52 @@
 import React, {Component} from "react";
 import { Polar } from "react-chartjs-2";
-import classes from "./css/ChartStyle.css"
 
 
 class PolarChartComponent extends Component {
-  state = {
-    chartData: this.props.chartData
-  };
 
-  static defaultProps = {
-    displayTitle: true,
-    displayLegend: true,
-    legendPosition: "right",
-    titleText: "Remember to overwrite this content",
-    titleFontSize: 25
-  };
+    static defaultProps = {
+        displayTitle: false,
+        displayLegend: false,
+        legendPosition: 'right',
+        titleText: '',
+        titleFontSize: 25,
+        height: 150,
+        labels: [],
+        values: [],
+        bg: []
+    }
 
-  render() {
-    const { chartData } = this.state;
-
-    return (
-      <div className={classes.ChartCard}>
-        <Polar
-          data={chartData}
-          options={{
-            title: {
-              display: this.props.displayTitle,
-              text: this.props.titleText,
-              fontSize: this.props.titleFontSize
+    render(){
+        return <Polar
+            data={{
+                    labels: this.props.labels,
+                    datasets: [
+                    {
+                        label: "Total ",
+                        data: this.props.values,
+                        backgroundColor: this.props.bg,
+                        // borderColor: "#2195f3",
+                    }]
+            }} 
+             options={{
+                 title:{
+                    display: this.props.displayTitle,
+                    text: this.props.titleText,
+                    fontSize: this.props.titleFontSize
             },
-            legend: {
-              display: this.props.displayLegend,
-              position: this.props.legendPosition,
-              labels: {
-                fontColor: "#000"
-              }
-            }
-          }}
-        />
-      </div>
-    );
-  }
+        
+            legend:{
+                display: this.props.displayLegend,
+                position: this.props.legendPosition,
+                    labels: {
+                        fontColor: '#000'
+                    }
+                }
+            }} 
+            height={this.props.height}
+            
+            />
+    }
 }
 
 export default PolarChartComponent;

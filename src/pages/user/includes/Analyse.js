@@ -1,5 +1,5 @@
 import React from "react";
-import PieChartComponent from "../../../component/chartjs/PieChartComponent";
+import PolarChartComponent from "../../../component/chartjs/PolarChartComponent";
 import LineChartComponent from "../../../component/chartjs/LineChartComponent";
 
 const Analyse = ({ stats, sumcount, state }) => {
@@ -11,7 +11,7 @@ const Analyse = ({ stats, sumcount, state }) => {
         <h1 className="text-center mt-3 mb-5">Here you go <b>{state.name}</b>, your wheel of life will look this</h1>
         <div className="row">
           <div className="col-md-4">
-            <PieChartComponent 
+            <PolarChartComponent 
               labels={stats.map(x => x.label)}
               values={stats.map(x => x.value)}
               bg={stats.map(x => x.color)}
