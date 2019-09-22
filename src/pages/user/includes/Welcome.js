@@ -1,16 +1,22 @@
 import React from "react";
+import ProgressMultipleBar from "./ProgressMultipleBar";
 
 const Welcome = ({ setStep }) => {
   return (
+    <>
+    <ProgressMultipleBar dangerCount={20} />
     <div className="container-fluid">
       <div className="container">
         <div className="row">
           <div className="col-md-4 mx-auto">
             <div className="home-page text-center">
               <h1 className="">
-                <span className="text-success">
+                <span className="font-300">
                 Hello and Welcome!
-                </span> Take a tour of your <b>Wheel of Life</b>
+                </span> Take a tour of your
+              </h1>
+              <h1>
+                <b><img className="faa-spin animated" src="/assets/img/icons/wheel-of-life.jpg" width="50" hight="50" /> Wheel of Life</b>
               </h1>
               <img 
                 onClick={() => setStep(2)} 
@@ -27,6 +33,7 @@ const Welcome = ({ setStep }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

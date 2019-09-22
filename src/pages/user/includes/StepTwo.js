@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressMultipleBar from "./ProgressMultipleBar";
 import ProgressBar from "./ProgressBar";
 import QuestionForm from "./QuestionForm";
 import IconImages from "./IconImages";
@@ -85,8 +86,38 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
 
   const sumcount = g + h + fr + ff + r + f + b + e;
 
+
+  let message;
+  const expert = "Please scroll down to see some expert advice for you.";
+
+  if (sumcount <= 39) {
+    message = `OOh my God! ${state.name} your wheel need alignment and this is creitical. ${expert}`;
+  }else if (sumcount > 39 && sumcount <= 60) {
+    message = `Wow! ${state.name} I see your wheel look promising but need some alignment. ${expert}`;
+  }else if (sumcount > 60 && sumcount <= 75) {
+    message = `Looking good! ${state.name} I see your wheel look good, just a little alignment. ${expert}`;
+  } else if (sumcount > 75){
+    message = `Great! ${state.name} I can see things are in the right direction, keep it up. ${expert}`;
+  }
+
   return (
+    <>
+    {analyse ? 
+      <ProgressMultipleBar 
+        dangerCount={20} 
+        warningCount={20} 
+        infoCount={20}
+        primaryCount={20}
+        successCount={20}
+      /> : 
+      <ProgressMultipleBar 
+        dangerCount={20} 
+        warningCount={20} 
+        infoCount={20}
+        primaryCount={20}
+      />}
     <div className="container-fluid">
+
       {!analyse ?
         <div className="row">
           <div className="col-md-4 mx-auto">
@@ -99,6 +130,10 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
             </div>
           </div>
         </div>: null }
+
+      {analyse && <div className="col-md-9 mx-auto mt-5 mb-4">
+        <h1 className="text-center font-300-black">{message}</h1>
+      </div>}
 
       <div className="row">
         {!analyse &&
@@ -155,6 +190,15 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
               <div className="col-md-3 mt-5">
                 {questionCount !== 0 && <ProgressBar color="bg-success" count={questionCount} />}
                 <Options state={state} />
+
+                <div className="card mt-4 mb-3">
+                  <div className="card-body text-center">
+                    <h1 className="font-300-black">Wow!, my friend need to see this app.</h1>
+                    <button className="btn btn-outline-success mt-3">
+                      Invit a friend
+                    </button>
+                  </div>
+                </div>
               </div>
 
               <div className="col-md-9 mt-5">
@@ -171,6 +215,7 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
 
       </div>
     </div>
+    </>
   );
 };
 

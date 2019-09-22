@@ -2,6 +2,15 @@
   height: 120px;
 }
 
+.font-300-black{
+  font-weight: 300;
+  color: black;
+}
+
+.font-300{
+  font-weight: 300;
+}
+
 .gender-card{
   cursor: pointer;
 }
@@ -77,4 +86,27 @@
 
 .carousel-indicators li {
   background-color: #4caf50;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  background: transparent;
+  background: transparent;
+  top: 276px;
+  width: 50%;
+}
+
+.carousel a{
+  color: #fd7dad;
+}
+
+.carousel a:hover, .carousel a:active, .carousel a:focus, .carousel a:visited, .carousel a::before{
+  color: #fd7dad;
+}
+
+.carousel .fa{
+  background: #ee5575;
+  padding: 2px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
 }

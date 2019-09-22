@@ -1,8 +1,16 @@
 import React from "react";
+import ProgressMultipleBar from "./ProgressMultipleBar";
 
 const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setState }) => {
   
   return (
+    <>
+    <ProgressMultipleBar 
+      dangerCount={20} 
+      warningCount={20} 
+      infoCount={20}
+      primaryCount={20}
+    />
     <div className="container-fluid">
       <div className="container">
         <div className="row">
@@ -63,7 +71,7 @@ const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setSta
                       <>
                       <button 
                         onClick={() => {
-                          setStep(4);
+                          setStep(5);
                           setCount(10);
                         }}
                         className="btn btn-outline-success btn-block mt-5">
@@ -89,6 +97,7 @@ const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setSta
         </div>
       </div>
     </div>
+    </>
   );
 };
 

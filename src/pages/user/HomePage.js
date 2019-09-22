@@ -5,6 +5,7 @@ import StepTwo from "./includes/StepTwo";
 import ProgressBar from "./includes/ProgressBar";
 import Welcome from "./includes/Welcome";
 import Rules from "./includes/Rules";
+import Note from "./includes/Note";
 
 
 const HomePage = () => {
@@ -40,6 +41,10 @@ const HomePage = () => {
         setStep={setStep}
       />;
     }else if(step === 3){
+      return <Note
+        setStep={setStep}
+      />;
+    }else if(step === 4){
       return <StepOne 
         gender={gender} 
         setGender={setGender}  
@@ -50,7 +55,7 @@ const HomePage = () => {
         state={state}
         onChange={onChange}
       />;
-    }else if(step === 4){
+    }else if(step === 5){
       return <StepTwo 
         step={step}
         setStep={setStep}
@@ -68,7 +73,6 @@ const HomePage = () => {
   return (
     <>
     {renderView()}
-    {/* {count > 0 && <ProgressBar count={count} />} */}
     </>
   );
 };
