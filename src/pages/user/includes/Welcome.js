@@ -5,6 +5,7 @@ const Welcome = ({ setStep }) => {
   return (
     <>
     <ProgressMultipleBar dangerCount={20} />
+
     <div className="container-fluid">
       <div className="container">
         <div className="row">

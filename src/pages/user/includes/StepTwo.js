@@ -15,7 +15,6 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
   const g = state.growth ? parseInt(state.growth) : 0;
   const fr = state.fun ? parseInt(state.fun) : 0;
   const h = state.health ? parseInt(state.health) : 0;
-  
   const ff = state.family ? parseInt(state.family) : 0;
   const r = state.romance ? parseInt(state.romance) : 0;
   const f = state.finance ? parseInt(state.finance) : 0;
@@ -206,6 +205,12 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
                   stats={withColor}
                   state={state}
                   sumcount={sumcount}
+                  setStep={setStep}
+                  setCount={setCount}
+                  setGender={setGender}
+                  setState={setState}
+                  setQuestionCount={setQuestionCount}
+                  setAnalyse={setAnalyse}
                 />
               </div> 
             </div> 

@@ -2,7 +2,7 @@ import React from "react";
 import PolarChartComponent from "../../../component/chartjs/PolarChartComponent";
 import LineChartComponent from "../../../component/chartjs/LineChartComponent";
 
-const Analyse = ({ stats, sumcount }) => {
+const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQuestionCount, setAnalyse }) => {
   return (
     <>
     <div className="card">
@@ -322,6 +322,19 @@ const Analyse = ({ stats, sumcount }) => {
           </div>
         </div>
       </div>
+    </div>
+
+    <div className="col-md-3 mx-auto">
+      <button onClick={() => {
+        setStep(1);
+        setCount(0);
+        setGender(null);
+        setState("");
+        setQuestionCount(0);
+        setAnalyse(false);
+      }} className="btn btn-outline-warning mb-5">
+        <i className="fa fa-arrow-left" />  Back to home
+      </button>
     </div>
     </>
   );

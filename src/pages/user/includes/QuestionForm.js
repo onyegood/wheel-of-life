@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Rating from "react-rating";
 
 const QuestionForm =  ({
   state, 
@@ -14,6 +15,22 @@ const QuestionForm =  ({
   setState,
   gender
 }) => {
+
+  const [health, setHealth] = useState(0);
+
+  console.log("Health = ", health);
+
+  /*
+
+  
+
+
+
+
+
+
+  */
+
   return (
     <>
       {question >= 9 ? <h1>Now let's analyse your entries</h1> :  null}
@@ -21,6 +38,15 @@ const QuestionForm =  ({
       { question === 1 &&
               <div className={state && state.health ? "form-group has-success" : "form-group"}>
                 <h2 className="form-control-label" htmlFor="inputSuccess1">Health</h2>
+                <p className="font-300-black">
+                  On a scale of 1 to 10, rate your current health status?
+                </p>
+                {/* <Rating 
+                  start	= {0}
+                  stop = {10}
+                  onClick={() => setHealth(health)}
+                  onChange={setHealth}
+                /> */}
                 <select
                   className={state && state.health ? "form-control is-valid" : "form-control"}
                   name="health"
@@ -44,6 +70,9 @@ const QuestionForm =  ({
       { question === 2 &&
                 <div className={state && state.family ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Family and Friends</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, how would you rate your Family and Friends relation?
+                  </p>
                   <select
                     className={state && state.family ? "form-control is-valid" : "form-control"}
                     name="family"
@@ -67,6 +96,9 @@ const QuestionForm =  ({
       { question === 3 &&
                 <div className={state && state.business ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Business and Career</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, how would you rate your Business and Career?
+                  </p>
                   <select
                     className={state && state.business ? "form-control is-valid" : "form-control"}
                     name="business"
@@ -90,6 +122,9 @@ const QuestionForm =  ({
       { question === 4 &&
                 <div className={state && state.environment ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Physical Environment</h2>
+                  <p className="font-300-black">
+                    On a scale of 1 to 10, rate your current Physical Environment?
+                  </p>
                   <select
                     className={state && state.environment ? "form-control is-valid" : "form-control"}
                     name="environment"
@@ -113,6 +148,9 @@ const QuestionForm =  ({
       { question === 5 &&
                 <div className={state && state.fun ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Fun and Recreation</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, how would you rate Fun and Recreation?
+                  </p>
                   <select
                     className={state && state.fun ? "form-control is-valid" : "form-control"}
                     name="fun"
@@ -136,6 +174,9 @@ const QuestionForm =  ({
       { question === 6 &&
                 <div className={state && state.romance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Romance</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, rate your Romance Life?
+                  </p>
                   <select
                     className={state && state.romance ? "form-control is-valid" : "form-control"}
                     name="romance"
@@ -159,6 +200,9 @@ const QuestionForm =  ({
       { question === 7 &&
                 <div className={state && state.growth ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Personal Growth</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, rate your Personal Growth?
+                  </p>
                   <select
                     className={state && state.growth ? "form-control is-valid" : "form-control"}
                     name="growth"
@@ -182,6 +226,9 @@ const QuestionForm =  ({
       { question === 8 &&
                 <div className={state && state.finance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Finance</h2>
+                  <p className="font-300-black">
+                  On a scale of 1 to 10, rate your Finance?
+                  </p>
                   <select
                     className={state && state.finance ? "form-control is-valid" : "form-control"}
                     name="finance"
