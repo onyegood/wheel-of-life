@@ -7,68 +7,120 @@ import Options from "./Options";
 import Analyse from "./Analyse";
 import { bgList } from "../../../component/chartjs/bg";
 
-const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setState }) => {
+const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questionsCompleted, setQuestionsCompleted }) => {
   const [question, setQuestion] = useState(1);
   const [questionCount, setQuestionCount] = useState(0);
   const [analyse, setAnalyse] = useState(false);
+  
 
-  const g = state.growth ? parseInt(state.growth) : 0;
-  const fr = state.fun ? parseInt(state.fun) : 0;
-  const h = state.health ? parseInt(state.health) : 0;
-  const ff = state.family ? parseInt(state.family) : 0;
-  const r = state.romance ? parseInt(state.romance) : 0;
-  const f = state.finance ? parseInt(state.finance) : 0;
-  const b = state.business ? parseInt(state.business) : 0;
-  const e = state.environment ? parseInt(state.environment) : 0;
+  const [health, setHealth] = useState(0);
+  const [family, setFamily] = useState(0);
+  const [business, setBusiness] = useState(0);
+  const [environment, setEnvironment] = useState(0);
+  const [fun, setFun] = useState(0);
+  const [romance, setRomance] = useState(0);
+  const [growth, setGrowth] = useState(0);
+  const [finance, setFinance] = useState(0);
 
+  // const g = growth ? parseInt(growth) : 0;
+  // const fr = fun ? parseInt(fun) : 0;
+  // const h = health ? parseInt(health) : 0;
+  // const ff = family ? parseInt(family) : 0;
+  // const r = romance ? parseInt(romance) : 0;
+  // const f = finance ? parseInt(finance) : 0;
+  // const b = business ? parseInt(business) : 0;
+  // const e = environment ? parseInt(environment) : 0;
   
   let stats = [];
   let withColor = []; //Add Color to the array
 
-  if (h && ff && b && e && fr && r && g && f) {
-    stats.push(
-      {
-        id: 1,
-        label: "Health",
-        value: h
-      },
-      {
-        id: 2,
-        label: "Family and Friends",
-        value: ff
-      },
-      {
-        id: 3,
-        label: "Business and Career",
-        value: b
-      },
-      {
-        id: 4,
-        label: "Physical Environment",
-        value: e
-      },
-      {
-        id: 5,
-        label: "Fun and Recreation",
-        value: fr
-      },
-      {
-        id: 6,
-        label: "Romance",
-        value: r
-      },
-      {
-        id: 7,
-        label: "Personal Growth",
-        value: g
-      },
-      {
-        id: 8,
-        label: "Finance",
-        value: f
-      }
-    );
-  }
+  stats.push(
+    {
+      id: 1,
+      label: "Health",
+      value: health || 0
+    },
+    {
+      id: 2,
+      label: "Family and Friends",
+      value: family || 0
+    },
+    {
+      id: 3,
+      label: "Business and Career",
+      value: business || 0
+    },
+    {
+      id: 4,
+      label: "Physical Environment",
+      value: environment || 0
+    },
+    {
+      id: 5,
+      label: "Fun and Recreation",
+      value: fun || 0
+    },
+    {
+      id: 6,
+      label: "Romance",
+      value: romance || 0
+    },
+    {
+      id: 7,
+      label: "Personal Growth",
+      value: growth || 0
+    },
+    {
+      id: 8,
+      label: "Finance",
+      value: finance || 0
+    }
+  );
+
+  // if (health && family && business && environment && fun && romance && growth && finance) {
+  //   stats.push(
+  //     {
+  //       id: 1,
+  //       label: "Health",
+  //       value: health
+  //     },
+  //     {
+  //       id: 2,
+  //       label: "Family and Friends",
+  //       value: family
+  //     },
+  //     {
+  //       id: 3,
+  //       label: "Business and Career",
+  //       value: business
+  //     },
+  //     {
+  //       id: 4,
+  //       label: "Physical Environment",
+  //       value: environment
+  //     },
+  //     {
+  //       id: 5,
+  //       label: "Fun and Recreation",
+  //       value: fun
+  //     },
+  //     {
+  //       id: 6,
+  //       label: "Romance",
+  //       value: romance
+  //     },
+  //     {
+  //       id: 7,
+  //       label: "Personal Growth",
+  //       value: growth
+  //     },
+  //     {
+  //       id: 8,
+  //       label: "Finance",
+  //       value: finance
+  //     }
+  //   );
+  // }
 
   stats.map(x => {
     bgList.filter(a => a.sn === x.id).map(c => {
@@ -83,7 +135,7 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
   });
 
 
-  const sumcount = g + h + fr + ff + r + f + b + e;
+  const sumcount = health + family + business + environment + fun + romance + growth + finance;
 
 
   let message;
@@ -123,7 +175,7 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
             <div className="home-page">
               <div className="profile-pix">
                 <h1 className="text-center mt-3 mb-3">
-                  Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {state && state.name}
+                  {question} Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {state && state.name}
                 </h1>
               </div>
             </div>
@@ -135,60 +187,87 @@ const StepTwo = ({ setStep, gender, onChange, state, setCount, setGender, setSta
       </div>}
 
       <div className="row">
-        {!analyse &&
-        <div className="col-md-6 mx-auto">
-          <div className="row mt-5">
-            <div className="col-md-2">
-              <IconImages question={question} />
-            </div>
+        {analyse ? null :
+          <div className="col-md-6 mx-auto">
+            <div className="row mt-5">
+              {!questionsCompleted && <div className="col-md-2">
+                <div className="questions">
+                  <IconImages question={question} />
+                </div>
+              </div>}
           
-            <div className={
-              state.growth || 
-              state.health || 
-              state.family || 
-              state.fun || 
-              state.romance || 
-              state.finance || 
-              state.business || 
-              state.environment ?
-                "col-md-6" : "col-md-10"}>
-              <QuestionForm 
-                state = {state} 
-                question = {question} 
-                onChange = {onChange} 
-                setQuestion = {setQuestion} 
-                setQuestionCount = {setQuestionCount} 
-                setAnalyse = {setAnalyse} 
-                questionCount = {questionCount}
-                setStep = {setStep}
-                setCount = {setCount}
-                setGender = {setGender}
-                setState = {setState}
-                gender = {gender} />
-            </div>
+              <div className={ growth || health || family || fun || romance || finance || business || environment ? "col-md-6" : "col-md-10"}>
+                <QuestionForm
+                  question = {question}
+                  setQuestion = {setQuestion} 
+                  setQuestionCount = {setQuestionCount} 
+                  setAnalyse = {setAnalyse} 
+                  questionCount = {questionCount}
+                  setStep = {setStep}
+                  setCount = {setCount}
+                  setGender = {setGender}
+                  gender = {gender}
+                  health = {health}
+                  setHealth = {setHealth}
+                  family = {family}
+                  setFamily = {setFamily}
+                  business = {business}
+                  setBusiness = {setBusiness}
+                  environment = {environment}
+                  setEnvironment = {setEnvironment}
+                  fun = {fun}
+                  setFun = {setFun}
+                  romance = {romance}
+                  setRomance = {setRomance}
+                  growth = {growth}
+                  setGrowth = {setGrowth}
+                  finance = {finance}
+                  setFinance = {setFinance}
+                  setQuestionsCompleted={setQuestionsCompleted}
+                />
+              </div>
             
-            {
-              state.growth || 
-              state.health || 
-              state.family || 
-              state.fun || 
-              state.romance || 
-              state.finance || 
-              state.business || 
-              state.environment ?
-                <div className="col-md-4">
-                  {questionCount !== 0 && <ProgressBar color="bg-success" count={questionCount} />}
-                  <Options state={state} />
-                </div> : null }
-          </div> 
-        </div>}
+              {
+                growth || 
+              health || 
+              family || 
+              fun || 
+              romance || 
+              finance || 
+              business || 
+              environment ?
+                  <div className="col-md-4">
+                    {questionCount !== 0 && <ProgressBar color="bg-success" count={questionCount} />}
+                    <Options 
+                      health={health}
+                      family={family}
+                      business={business}
+                      environment={environment}
+                      fun={fun}
+                      romance={romance}
+                      growth={growth}
+                      finance={finance}
+                    />
+                  </div> : null }
+            </div> 
+          </div>
+        }
 
         {stats && analyse ? 
           <div className="container">
             <div className="row">
               <div className="col-md-3 mt-5">
                 {questionCount !== 0 && <ProgressBar color="bg-success" count={questionCount} />}
-                <Options state={state} />
+                <Options 
+                  health={health}
+                  family={family}
+                  business={business}
+                  environment={environment}
+                  fun={fun}
+                  romance={romance}
+                  growth={growth}
+                  finance={finance}
+                />
 
                 <div className="card mt-4 mb-3">
                   <div className="card-body text-center">

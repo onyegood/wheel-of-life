@@ -2,7 +2,7 @@ import React from "react";
 import ProgressMultipleBar from "./ProgressMultipleBar";
 
 const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setState }) => {
-  
+
   return (
     <>
     <ProgressMultipleBar 

@@ -1,6 +1,6 @@
 import React from "react";
 import PolarChartComponent from "../../../component/chartjs/PolarChartComponent";
-import LineChartComponent from "../../../component/chartjs/LineChartComponent";
+import BarChartComponent from "../../../component/chartjs/BarChartComponent";
 
 const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQuestionCount, setAnalyse }) => {
   return (
@@ -23,9 +23,9 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
           </div>
 
           <div className="col-md-8">
-            <LineChartComponent 
+            <BarChartComponent 
               labels={stats.map(x => x.label)}
-              values1={stats.map(x => x.value)}
+              values={stats.map(x => x.value)}
               bg={stats.map(x => x.color)}
               displayLegend={false}
               displayTitle={false}
@@ -40,7 +40,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
             <div className="key">
               <ul>
                 {stats.map(k => <li>
-                  <i style={{color: k.color}} className="fa fa-pie-chart" /> {k.label} - %{k.value}
+                  <i style={{color: k.color}} className="fa fa-pie-chart" /> {k.label} - {k.value}%
                 </li>)}
               </ul>
             </div>
@@ -58,7 +58,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
               <h1 className={
                 sumcount <= 40 ? "text-danger" :
                   sumcount > 40 && sumcount <= 59  ? "text-primary" :
-                    sumcount >= 60 ? "text-success" : "" }>%{sumcount}</h1>
+                    sumcount >= 60 ? "text-success" : "" }>{sumcount}%</h1>
             </div>
 
             <button className="btn btn-outline-success mb-5 faa-pulse animated">Send to your email</button>
@@ -324,7 +324,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
       </div>
     </div>
 
-    <div className="col-md-3 mx-auto">
+    <div className="col-md-3 mx-auto text-center">
       <button onClick={() => {
         setStep(1);
         setCount(0);

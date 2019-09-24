@@ -2,26 +2,19 @@ import React, {useState} from "react";
 import "./css/Home.css";
 import StepOne from "./includes/StepOne";
 import StepTwo from "./includes/StepTwo";
-import ProgressBar from "./includes/ProgressBar";
 import Welcome from "./includes/Welcome";
 import Rules from "./includes/Rules";
 import Note from "./includes/Note";
+import Wheel from "./Wheel";
 
 
 const HomePage = () => {
   const [gender, setGender] = useState(null);
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
+  const [questionsCompleted, setQuestionsCompleted] = useState(false);
   const [state, setState] = useState({
-    name: "",
-    health: "",
-    family: "",
-    fun: "",
-    romance: "",
-    finance: "",
-    business: "",
-    environment: "",
-    growth: ""
+    name: ""
   });
 
   const onChange = e => {
@@ -57,14 +50,15 @@ const HomePage = () => {
       />;
     }else if(step === 5){
       return <StepTwo 
+        state={state}
+        setState={setState}
         step={step}
         setStep={setStep}
         setCount={setCount}
         gender={gender}
         setGender={setGender}
-        setState={setState}
-        state={state}
-        onChange={onChange}
+        questionsCompleted={questionsCompleted}
+        setQuestionsCompleted={setQuestionsCompleted}
       />;
       
     }

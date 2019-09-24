@@ -6,6 +6,35 @@
   #page-content-wrapper {
     padding-left: 0 !important;
   }
+  .gender-selected {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
+  .gender-selected img, .gender-card img {
+    height: 90px;
+  }
+  .gender-card {
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  .questions{
+    height: 150px;
+    width: 150px;
+    padding-bottom: 10px;
+    margin: auto;
+  }
+  .options img{
+    height: 40px;
+    width: 40px;;
+  }
+  .btn {
+    padding: 8%;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
