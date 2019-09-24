@@ -175,7 +175,7 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
             <div className="home-page">
               <div className="profile-pix">
                 <h1 className="text-center mt-3 mb-3">
-                  {question} Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {state && state.name}
+                  Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {state && state.name}
                 </h1>
               </div>
             </div>
@@ -196,7 +196,8 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
                 </div>
               </div>}
           
-              <div className={ growth || health || family || fun || romance || finance || business || environment ? "col-md-6" : "col-md-10"}>
+              <div className={ growth || health || family || fun || romance || finance || business || environment ? "col-md-6 top-space" : "col-md-10 top-space"}>
+                
                 <QuestionForm
                   question = {question}
                   setQuestion = {setQuestion} 
@@ -256,7 +257,7 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
         {stats && analyse ? 
           <div className="container">
             <div className="row">
-              <div className="col-md-3 mt-5">
+              <div className="col-md-3 mt-5 display">
                 {questionCount !== 0 && <ProgressBar color="bg-success" count={questionCount} />}
                 <Options 
                   health={health}

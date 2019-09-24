@@ -8,7 +8,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
     <div className="card">
       <div className="card-body">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 mt-5">
             <PolarChartComponent 
               labels={stats.map(x => x.label)}
               values={stats.map(x => x.value)}
@@ -22,7 +22,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
             />
           </div>
 
-          <div className="col-md-8">
+          <div className="col-md-8 mt-5">
             <BarChartComponent 
               labels={stats.map(x => x.label)}
               values={stats.map(x => x.value)}
@@ -36,7 +36,7 @@ const Analyse = ({ stats, sumcount, setStep, setCount, setGender, setState, setQ
             />
           </div>
 
-          <div className="col-md-12">
+          <div className="col-md-12 mt-2">
             <div className="key">
               <ul>
                 {stats.map(k => <li>

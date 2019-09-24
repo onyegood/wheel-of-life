@@ -176,7 +176,7 @@ const QuestionForm =  ({
                 <>
                   {question === 8 ?
                   <>
-                    <div className="row">
+                    <div className="row mobile-btn-arrange">
                       <div className="col-sm-6">
                         <span 
                           onClick={() => {
@@ -202,7 +202,7 @@ const QuestionForm =  ({
                   </>
                     : question >= 9 ? 
                     <>
-                    <div className="row">
+                    <div className="row mobile-btn-arrange">
                       <div className="col-sm-6">
                         <span 
                           onClick={() => {
@@ -227,7 +227,7 @@ const QuestionForm =  ({
                   </>
                       :
                   <>
-                  <div className="row">
+                  <div className="row mobile-btn-arrange">
                     {question > 1 ? 
                       <div className="col-sm-6">
                         <span 
