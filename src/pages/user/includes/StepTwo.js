@@ -7,12 +7,10 @@ import Options from "./Options";
 import Analyse from "./Analyse";
 import { bgList } from "../../../component/chartjs/bg";
 
-const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questionsCompleted, setQuestionsCompleted }) => {
+const StepTwo = ({ setStep, gender, setCount, setGender, setName, name, questionsCompleted, setQuestionsCompleted }) => {
   const [question, setQuestion] = useState(1);
   const [questionCount, setQuestionCount] = useState(0);
   const [analyse, setAnalyse] = useState(false);
-  
-
   const [health, setHealth] = useState(0);
   const [family, setFamily] = useState(0);
   const [business, setBusiness] = useState(0);
@@ -77,51 +75,6 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
     }
   );
 
-  // if (health && family && business && environment && fun && romance && growth && finance) {
-  //   stats.push(
-  //     {
-  //       id: 1,
-  //       label: "Health",
-  //       value: health
-  //     },
-  //     {
-  //       id: 2,
-  //       label: "Family and Friends",
-  //       value: family
-  //     },
-  //     {
-  //       id: 3,
-  //       label: "Business and Career",
-  //       value: business
-  //     },
-  //     {
-  //       id: 4,
-  //       label: "Physical Environment",
-  //       value: environment
-  //     },
-  //     {
-  //       id: 5,
-  //       label: "Fun and Recreation",
-  //       value: fun
-  //     },
-  //     {
-  //       id: 6,
-  //       label: "Romance",
-  //       value: romance
-  //     },
-  //     {
-  //       id: 7,
-  //       label: "Personal Growth",
-  //       value: growth
-  //     },
-  //     {
-  //       id: 8,
-  //       label: "Finance",
-  //       value: finance
-  //     }
-  //   );
-  // }
-
   stats.map(x => {
     bgList.filter(a => a.sn === x.id).map(c => {
       withColor.push({
@@ -142,13 +95,13 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
   const expert = "Please scroll down to see some expert advice for you.";
 
   if (sumcount <= 39) {
-    message = `OOh my God! ${state.name} your wheel need alignment and this is creitical. ${expert}`;
+    message = `OOh my God! ${name} your wheel need alignment and this is creitical. ${expert}`;
   }else if (sumcount > 39 && sumcount <= 60) {
-    message = `Wow! ${state.name} I see your wheel look promising but need some alignment. ${expert}`;
+    message = `Wow! ${name} I see your wheel look promising but need some alignment. ${expert}`;
   }else if (sumcount > 60 && sumcount <= 75) {
-    message = `Looking good! ${state.name} I see your wheel look good, just a little alignment. ${expert}`;
+    message = `Looking good! ${name} I see your wheel look good, just a little alignment. ${expert}`;
   } else if (sumcount > 75){
-    message = `Great! ${state.name} I can see things are in the right direction, keep it up. ${expert}`;
+    message = `Great! ${name} I can see things are in the right direction, keep it up. ${expert}`;
   }
 
   return (
@@ -175,7 +128,7 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
             <div className="home-page">
               <div className="profile-pix">
                 <h1 className="text-center mt-3 mb-3">
-                  Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {state && state.name}
+                  Hi, <img src={`/assets/img/icons/${gender}.svg`} title={`I'm a ${gender}`} className="img-rounded" /> {name && name}
                 </h1>
               </div>
             </div>
@@ -270,25 +223,25 @@ const StepTwo = ({ setStep, gender, state, setCount, setGender, setState, questi
                   finance={finance}
                 />
 
-                <div className="card mt-4 mb-3">
+                {/* <div className="card mt-4 mb-3">
                   <div className="card-body text-center">
                     <h1 className="font-300-black">Wow!, my friend need to see this app.</h1>
                     <button className="btn btn-outline-success mt-3">
                       Invit a friend
                     </button>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="col-md-9 mt-5">
                 <Analyse 
                   stats={withColor}
-                  state={state}
+                  name={name}
                   sumcount={sumcount}
                   setStep={setStep}
                   setCount={setCount}
                   setGender={setGender}
-                  setState={setState}
+                  setName={setName}
                   setQuestionCount={setQuestionCount}
                   setAnalyse={setAnalyse}
                 />

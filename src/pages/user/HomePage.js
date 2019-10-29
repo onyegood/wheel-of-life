@@ -13,16 +13,19 @@ const HomePage = () => {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
   const [questionsCompleted, setQuestionsCompleted] = useState(false);
-  const [state, setState] = useState({
-    name: ""
-  });
+  const [name, setName] = useState(null);
+  // const [state, setState] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: ""
+  // });
 
-  const onChange = e => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value
-    });
-  };
+  // const onChange = e => {
+  //   setState({
+  //     ...state,
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
 
   const renderView = () => {
     if (step === 1) {
@@ -44,14 +47,12 @@ const HomePage = () => {
         step={step}
         setStep={setStep}
         setCount={setCount}
-        setState={setState}
-        state={state}
-        onChange={onChange}
+        setName={setName}
       />;
     }else if(step === 5){
       return <StepTwo 
-        state={state}
-        setState={setState}
+        name={name}
+        setName={setName}
         step={step}
         setStep={setStep}
         setCount={setCount}

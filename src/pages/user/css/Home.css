@@ -20,7 +20,7 @@
 }
 
 .home-page{
-  margin-top: 40%;
+  margin-top: 25%;
 }
 
 .isActive{
@@ -93,6 +93,8 @@
   background: transparent;
   top: 276px;
   width: 50%;
+
+  padding-top: 40px;
 }
 
 .carousel a{
@@ -110,4 +112,8 @@
   height: 30px;
   width: 30px;
 }
-	
+  
+.carousel {
+  position: relative;
+  padding-bottom: 40px;
+}

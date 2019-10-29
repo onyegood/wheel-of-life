@@ -16,7 +16,7 @@ const Rules = ({ setStep }) => {
               <h1>
                 <span className="text-success">
                 To get the best out of this exercise,
-                </span> Ensure to answer all questions with all <b>sincerity!</b>
+                </span> ensure to answer all questions with all <b>sincerity!</b>
               </h1>
               <div className="p-3">
                 <img 

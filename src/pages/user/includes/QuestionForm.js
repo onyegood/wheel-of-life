@@ -39,10 +39,11 @@ const QuestionForm =  ({
       { question === 1 &&
               <div className={health ? "form-group has-success" : "form-group"}>
                 <h2 className="form-control-label" htmlFor="inputSuccess1">Health</h2>
-                <p className="font-300-black">
-                  On a scale of 1 to 10, rate your current health status?
+                <p>
+                  How physically and mentally healthy are you? Do you have any physical discomforts? To what extent are you engaged in sports?
                 </p>
 
+                <p className="font-300-black"> On a scale of 1 to 10, rate your current health status? </p>
                 <Rating 
                   rating={10}
                   start={1}
@@ -50,12 +51,14 @@ const QuestionForm =  ({
                   rated={health}
                   value={setHealth}
                 />
+                
               </div>
       }
 
       { question === 2 &&
                 <div className={family ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Family and Friends</h2>
+                  <p>Are your friends supportive, unconditional and trustworthy? To what extent do you spend your free time with family and friends?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, how would you rate your Family and Friends relation?
                   </p>
@@ -73,6 +76,7 @@ const QuestionForm =  ({
       { question === 3 &&
                 <div className={business ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Business and Career</h2>
+                  <p>How satisfied are you with your job, is it the job of your dream or would you rather pursue another career? Does the job bring you happiness and satisfaction? Does the job earn enough for a living?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, how would you rate your Business and Career?
                   </p>
@@ -90,6 +94,7 @@ const QuestionForm =  ({
       { question === 4 &&
                 <div className={environment ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Physical Environment</h2>
+                  <p>Are you satisfied with your residence and the environment or would you rather move to a better place? </p>
                   <p className="font-300-black">
                     On a scale of 1 to 10, rate your current Physical Environment?
                   </p>
@@ -107,6 +112,7 @@ const QuestionForm =  ({
       { question === 5 &&
                 <div className={fun ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Fun and Recreation</h2>
+                  <p>Are you enjoying life? Do you practice hobbies or sports? How do you spend your free time?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, how would you rate Fun and Recreation?
                   </p>
@@ -124,6 +130,7 @@ const QuestionForm =  ({
       { question === 6 &&
                 <div className={romance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Romance</h2>
+                  <p>Have you found happiness in love? Do you have a new partner or a committed partner on who you can build? </p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Romance Life?
                   </p>
@@ -141,6 +148,7 @@ const QuestionForm =  ({
       { question === 7 &&
                 <div className={growth ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Personal Growth</h2>
+                  <p>How do you deal with personal growth. Are you open to new experiences and eager to learn? Are you spiritually connected to both the inner and outer world?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Personal Growth?
                   </p>
@@ -158,6 +166,7 @@ const QuestionForm =  ({
       { question === 8 &&
                 <div className={finance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Finance</h2>
+                  <p>Are all your incomes enough to meet all basic needs and other needs? Are you not dependent on loans? Do you not have any debts?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Finance?
                   </p>

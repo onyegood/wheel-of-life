@@ -1,7 +1,11 @@
 import React from "react";
 import ProgressMultipleBar from "./ProgressMultipleBar";
+import { withFormik, Form, Field } from "formik";
+import { CustomInputComponent } from "../../../helpers/CustomInputComponent";
+import { emailPattern } from "../../../helpers";
+import { UserDataValidator } from "../validate/UserDataValidator";
 
-const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setState }) => {
+const StepOne = ({ setGender, gender, setStep, setCount, setName, values, setSubmitting }) => {
 
   return (
     <>
@@ -57,23 +61,40 @@ const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setSta
                     <>
                     <div className="col-sm-12 mt-4">
                       <h3 className="text-success mt-3 mb-3">I'm a {gender}</h3>
-                      <div className={state && state.name.length > 2 ? "form-group has-success" : "form-group"}>
-                        <input 
-                          className={state && state.name.length > 2 ? "form-control is-valid" : "form-control"}
-                          placeholder="Your name please" 
+
+
+                      <Form id="sign-in-form">
+                      
+                        <Field
                           name="name"
-                          value={state.name}
-                          onChange={onChange}
+                          title=""
+                          type="text"
+                          placeholder="Full Name"
+                          component={CustomInputComponent}
                         />
-                      </div>
+
+                        <Field
+                          name="email"
+                          title=""
+                          type="email"
+                          pattern={emailPattern}
+                          placeholder="Email address"
+                          component={CustomInputComponent}
+                        />
+                       
+                        <Field
+                          name="phone"
+                          title=""
+                          type="number"
+                          placeholder="Mobile Phone"
+                          component={CustomInputComponent}
+                        />
+                      
                     
-                      {state && state.name.length > 2 && 
+                        {values && values.name && values.email && values.phone && 
                       <>
                       <button 
-                        onClick={() => {
-                          setStep(5);
-                          setCount(10);
-                        }}
+                        disabled={setSubmitting}
                         className="btn btn-outline-success btn-block mt-5">
                         Continue
                       </button>
@@ -82,12 +103,15 @@ const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setSta
                         setStep(1);
                         setCount(0);
                         setGender(null);
-                        setState("");
+                        setName("");
                       }}
+
                       className="cursor-pointer text-center text-danger mt-3 mb-3">
                         <b><i className="ion-ios-refresh" /> RESET</b>
                       </p>
+                      
                       </>}
+                      </Form>
                     </div>
                   </>
                 }
@@ -101,4 +125,26 @@ const StepOne = ({ setGender, gender, setStep, setCount, state, onChange, setSta
   );
 };
 
-export default StepOne;
+const FormikConnect = withFormik({
+  mapPropsToValues({ email, name, phone }) {
+    return {
+      email: email || "",
+      name: name || "",
+      phone: phone || ""
+    };
+  },
+  validationSchema: UserDataValidator(),
+  handleSubmit: async (values, { props, resetForm, setErrors, setSubmitting }) => {
+    props.setStep(5);
+    props.setCount(10);
+    props.setName(values.name);
+    // props.submit(values);
+    // setTimeout(() => {
+    //   props.clearMessage();
+    //   resetForm();
+    //   setSubmitting(false);
+    // }, 500);
+  }
+});
+
+export default FormikConnect(StepOne);

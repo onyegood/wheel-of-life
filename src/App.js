@@ -10,6 +10,36 @@ class App extends Component {
   componentDidMount = () => {
     if (this.props.isAuthenticated)
       this.props.fetchCurrentUserRequest();
+
+    //   let deferredPrompt;
+
+    // btnAdd.addEventListener("click", (e) => {
+    //   deferredPrompt.prompt();
+
+    //   deferredPrompt.userChose.then((chooseResult) => {
+    //     if (chooseResult.outcome === "accepted") {
+    //       console.log("User accepted to install");
+    //     }
+
+    //     deferredPrompt = null;
+    //   });
+    // });
+
+    // window.addEventListener("beforeinstallprompt", (e) => {
+
+    //   e.preventDefault();
+
+    //   deferredPrompt = e;
+
+    //   btnAdd.style.display = "block";
+
+    // });
+
+    // window.addEventListener("appinstalled", (evt) => {
+    //   app.logEvent("a2hs", "installed");
+    // });
+
+
   }
 
   render() {
