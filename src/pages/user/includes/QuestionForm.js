@@ -1,36 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import Rating from "../includes/Rating";
+import Axios from "axios";
+import { newBase } from "../../../base/nBase";
 
-const QuestionForm =  ({
-  question,
-  setQuestion, 
-  setQuestionCount, 
-  setAnalyse, 
-  questionCount,
-  setStep,
-  setCount,
-  setGender,
-  setState,
-  gender,
-  health,
-  setHealth,
-  family,
-  setFamily,
-  business,
-  setBusiness,
-  environment,
-  setEnvironment,
-  fun,
-  setFun,
-  romance,
-  setRomance,
-  growth,
-  setGrowth,
-  finance,
-  setFinance,
-  setQuestionsCompleted
-}) => {
+const QuestionForm =  (props) => {
 
+  const {
+    question,
+    setQuestion, 
+    setQuestionCount, 
+    setAnalyse, 
+    questionCount,
+    setStep,
+    setCount,
+    setGender,
+    gender,
+    health,
+    setHealth,
+    family,
+    setFamily,
+    business,
+    setBusiness,
+    environment,
+    setEnvironment,
+    fun,
+    setFun,
+    romance,
+    setRomance,
+    growth,
+    setGrowth,
+    finance,
+    setFinance,
+    setQuestionsCompleted
+  } = props;
+
+  const doSubmitScore = () => {
+    const data = {
+      business,
+      environment,
+      family,
+      finance,
+      fun,
+      growth,
+      health,
+      romance,
+      user: localStorage.getItem("@id")
+    };
+
+    Axios.post(`${newBase}scores`, data)
+      .then(res => console.log(res.data.message))
+      .catch(e => console.log(e));
+  };
 
   return (
     <>
@@ -227,6 +247,7 @@ const QuestionForm =  ({
                         <button 
                           onClick={() => {
                             setAnalyse(true);
+                            doSubmitScore();
                           }}
                           className="btn btn-outline-success btn-block mt-5">
                           <i className="fa fa-pie-chart" /> analyse
@@ -268,7 +289,6 @@ const QuestionForm =  ({
                   setStep(1);
                   setCount(0);
                   setGender(null);
-                  setState("");
                   setQuestionCount(0);
                   setAnalyse(false);
                   setQuestionsCompleted(false);

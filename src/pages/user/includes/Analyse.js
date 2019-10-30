@@ -245,7 +245,6 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
         setStep(1);
         setCount(0);
         setGender(null);
-        setState("");
         setQuestionCount(0);
         setAnalyse(false);
       }} className="btn btn-outline-warning mb-5">

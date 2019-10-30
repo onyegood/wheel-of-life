@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProgressMultipleBar from "./ProgressMultipleBar";
+import Axios from "axios";
+import { newBase } from "../../../base/nBase";
 
 const Welcome = ({ setStep }) => {
+  useEffect(() => {
+    doCallHitmap();
+  });
+
+  const doCallHitmap = () => {
+    Axios.post(`${newBase}hitmaps`)
+      .then(res => console.log(res.data.message))
+      .catch(e => console.log(e));
+  };
+
   return (
     <>
     <ProgressMultipleBar dangerCount={20} />

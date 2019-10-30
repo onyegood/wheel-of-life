@@ -16,8 +16,7 @@ const Note = ({ setStep }) => {
             <div className="home-page text-center">
               <h1>
                 <span className="text-success">
-                NOTE: Our expert advice will be based on your answers.
-                </span> So <b>honesty still remains the gateway to this game.</b>
+                Note: Our expert advice will be based on your answers.</span> So <b>honesty still remains the gateway to this game.</b>
               </h1>
               <img 
                 onClick={() => setStep(4)} 

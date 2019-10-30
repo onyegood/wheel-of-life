@@ -4,6 +4,8 @@ import { withFormik, Form, Field } from "formik";
 import { CustomInputComponent } from "../../../helpers/CustomInputComponent";
 import { emailPattern } from "../../../helpers";
 import { UserDataValidator } from "../validate/UserDataValidator";
+import Axios from "axios";
+import { newBase } from "../../../base/nBase";
 
 const StepOne = ({ setGender, gender, setStep, setCount, setName, values, setSubmitting }) => {
 
@@ -138,12 +140,22 @@ const FormikConnect = withFormik({
     props.setStep(5);
     props.setCount(10);
     props.setName(values.name);
-    // props.submit(values);
-    // setTimeout(() => {
-    //   props.clearMessage();
-    //   resetForm();
-    //   setSubmitting(false);
-    // }, 500);
+
+    Axios.post(`${newBase}users`, {
+      name: values.name,
+      email: values.email,
+      phone: values.phone.toString()
+    })
+      .then(res => {
+        localStorage.setItem("@id", res.data.user._id);
+        localStorage.setItem("@step", 5);
+      })
+      .catch(e => console.log(e));
+      
+    setTimeout(() => {
+      resetForm();
+      setSubmitting(false);
+    }, 500);
   }
 });
 
