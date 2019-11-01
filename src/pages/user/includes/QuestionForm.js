@@ -150,7 +150,7 @@ const QuestionForm =  (props) => {
       { question === 6 &&
                 <div className={romance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Romance</h2>
-                  <p>Have you found happiness in love? Do you have a new partner or a committed partner on who you can build? </p>
+                  <p>Have you found happiness in love? Do you have a new partner or a committed partner on whom you can build and plan your future? </p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Romance Life?
                   </p>
@@ -186,7 +186,7 @@ const QuestionForm =  (props) => {
       { question === 8 &&
                 <div className={finance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Finance</h2>
-                  <p>Are all your incomes enough to meet all basic needs and other needs? Are you not dependent on loans? Do you not have any debts?</p>
+                  <p>Do your income meet all your basic needs and other needs? Are you  dependent on loans? Do you not have any debts? Is money the only thing that makes a person happy?</p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Finance?
                   </p>

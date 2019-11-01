@@ -95,7 +95,7 @@ const StepTwo = ({ setStep, gender, setCount, setGender, setName, name, question
   const expert = "Please scroll down to see some expert advice for you.";
 
   if (sumcount <= 39) {
-    message = `OOh my God! ${name} your wheel need alignment and this is creitical. ${expert}`;
+    message = `Oh my God! ${name} your wheel need alignment and this is critical. ${expert}`;
   }else if (sumcount > 39 && sumcount <= 60) {
     message = `Wow! ${name} I see your wheel look promising but need some alignment. ${expert}`;
   }else if (sumcount > 60 && sumcount <= 75) {

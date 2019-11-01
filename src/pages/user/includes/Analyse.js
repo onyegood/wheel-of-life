@@ -70,19 +70,21 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
 
                 <div className="carousel-item active min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 1).map(q => 
-                    <h1 className="text-danger mt-3 text-wrap font-300">{q.label} is wealth they said. You may conceder visiting the hospital for full body check-up, 
-                      take more of fruits, try exercise, take time off to rest, eat nuts. Drink more water, most especially before meals.</h1>
+                    <h1 className="text-danger mt-3 text-wrap font-300">
+                    Health is wealth they say. You may consider visiting the hospital for full body check-up, take more of fruits, try exercise, take time off to rest, eat nuts, 
+                    drink more water, most especially before meals.
+                    </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 1).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      Your health is fine but needs improvement. Find time to go for medical check-up, eat healthy food, exercise, more water intake, and rest well.
+                    Your health is fine but needs improvement. Find time to go for medical check-up, eat healthy food, exercise,  drink more water, and rest well.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 1).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                        Your health look great, please keep it up. Remember to go for check-up at when due, exercise, eat healthy food, take more water, eat vegetables and fruits.
+                    Your health looks great, please keep it up. Remember to go for check-up at when due, exercise, eat healthy food, take more water, eat vegetables and fruits.
                     </h1> 
                   )}
                 </div>
@@ -90,38 +92,41 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 2).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                      You have poor family and friends relation. Communication is key, make phone calls and take phone calls from loved onces, take out time to talk and have fun with your family, 
-                      share your worries with your partner and make the solution a collective effort.
+                    You have poor family and friends relation. Communication is key, make phone calls and take phone calls from loved ones, take out time to 
+                    talk and have fun with your family, share your worries with your partner and make the solution a collective effort.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 2).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      Your family and friends relation is fine, but you may also want to put in more effort to make it better. Why not try taking your family out to see movies, hang out with friends at least once or twice a month.
+                    Your family and friends relation is fine, but you may also want to put in more effort to make it better. Why not try taking your family out to see movies, 
+                    hang out with friends at least once or twice a month.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 2).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                        Your family and friends relation look great, please keep it up. Remember to read books and blogs on happy home and good friendship relation. 
+                    Your family and friends relation looks great, please keep it up. Remember to read books and blogs on happy home and good friendship relation. 
                     </h1>
                   )}
                 </div>
 
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 3).map(q => 
-                    <h1 className="text-danger mt-3 text-wrap font-300">You are not happy at all with your current job. Try learning new things about your job or consider pursue another career.</h1>
+                    <h1 className="text-danger mt-3 text-wrap font-300">
+                    You are not happy at all with your current job. Try learning new things about your job or consider pursue another career.
+                    </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 3).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      Good to know you are reasonably satisfied with your job, but there is definitely a need and chance for improvement to achieve more goals.
+                    Good to know you are reasonably satisfied with your job, but there is definitely a need and chance for improvement to achieve more goals.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 3).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                       Wow {name}, you are very satisfied in your job. It is important to ensure that this is maintained.
+                    Wow {name}, you are very satisfied with your job. It is important to ensure that this is maintained.
                     </h1>
                   )}
                 </div>
@@ -129,19 +134,19 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 4).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                      {name} your physical environment is too poor and will likely affect your thinking and productivity level. You may consider changing location.
+                      {name}, your physical environment is too poor and will likely affect your thinking and productivity level. You may consider changing location.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 4).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      {name} your physical environment look good, but do not hesitate to move to another place if you think it is no longer safe for you and your family. 
+                      {name}, your physical environment look good, but do not hesitate to move to another place if you think it is no longer safe for you and your family. 
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 4).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                      {name}, your physical environment is great, remember to explore the city, take time off to say hello to your neighbours. 
+                      {name}, your physical environment is great, remember to explore the city, take time off to say hello to your neighbours.  
                     </h1>
                   )}
                 </div>
@@ -149,36 +154,39 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 5).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                      {name} your fun and recreation is too poor. Try doing at least one fun activity at work per day, set aside one evening or day a week  as an appointment with yourself to do something you enjoy. </h1>
+                      {name}, your fun and recreation is too poor. Try doing at least one fun activity at work per day, set aside one evening or day in a week  as an appointment with yourself to do something you enjoy.
+                    </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 5).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      {name} your fun and recreation look good, but also needs to be improved. You may consider going to dinner or a movie theater by yourself, spend more time playing board games or doing fun activities in the park.
+                      {name}, your fun and recreation looks good, but also needs to be improved. You may consider going for dinner or the movies  by yourself, spend more time playing board games or doing fun activities in the park.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 5).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                      {name} your fun and recreation look great please keep it up, you may also consider learn how to play musical instrument to add to your fun life.
+                      {name}, your fun and recreation looks great please keep it up, you may also consider learning how to play musical instrument to add to your fun life.
                     </h1>
                   )}
                 </div>
 
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 6).map(q => 
-                    <h1 className="text-danger mt-3 text-wrap font-300">Hi {name}, your romance life is too poor, try as much as you can to work on your self.</h1>
+                    <h1 className="text-danger mt-3 text-wrap font-300">
+                    Hi {name}, your romance life is too poor, try as much as you can to work on yourself.
+                    </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 6).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      {name}, your romance life look good, but it can be better.
+                      {name}, your romance life looks good, but it can be better.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 6).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                        Great {name}, your romance life look good. Please keep it up. 
+                    Great {name}, your romance life look good. Please keep it up. 
                     </h1>
                   )}
                 </div>
@@ -186,21 +194,20 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 7).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                      Oh no! {name} your personal growth is too poor. You may want create a <b>Plan of Action (PA)</b>. 
-                      A plan of action should include actions such as what you need to do and when that will support your goals. 
-                      It’s always best to have a written plan of action to avoid forgetting important tasks.
+                    Oh no! {name}, your personal growth is too poor. You may want to create a <b>Plan of Action (PA)</b>. A plan of action should include actions such as what you need to do and when to do them as that will support your goals. 
+                    It’s always best to have a written plan of action to avoid forgetting important tasks.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 5 && x.value <= 7 && x.id === 7).map(q => 
                     <h1 className="text-primary mt-3 text-wrap font-300">
-                      {name}, your personal growth look good but will be better if it is improved on. Please do reward yourself for every milestones in the journey of personal growth.
+                      {name}, your personal growth look good but will be better if it  improves. Please do reward yourself for every milestone in the journey of personal growth.
                     </h1>
                   )}
 
                   {stats.filter(x => x.value >= 8 && x.id === 7).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                        Wow! {name}, your personal growth look promising, please keep it up. Remember to share your experiences with others.
+                    Wow! {name}, your personal growth looks promising, please keep it up. Remember to share your experiences with others.
                     </h1>
                   )}
                 </div>
@@ -208,8 +215,7 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 8).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                      {name}, your finance is too poor and this can lead to crisis in the nearest future if not controlled. 
-                      You must this identify as a problems, controll your spending, create budget and set financial priorities.
+                      {name}, your finance is too poor and this can lead to crisis in the nearest future if not controlled. You must identify this as a problem, control your spending, create budget and set financial priorities.
                     </h1>
                   )}
 
@@ -221,7 +227,7 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
 
                   {stats.filter(x => x.value >= 8 && x.id === 8).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                        Wow {name}, your finance is great, please keep it up.
+                    Wow {name}, your finance is great, please keep it up.
                     </h1>
                   )}
                 </div>
