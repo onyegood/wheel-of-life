@@ -2,7 +2,7 @@ import React from "react";
 import PolarChartComponent from "../../../component/chartjs/PolarChartComponent";
 import BarChartComponent from "../../../component/chartjs/BarChartComponent";
 
-const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState, setQuestionCount, setAnalyse }) => {
+const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setQuestionCount, setAnalyse }) => {
   return (
     <>
     <div className="card">
@@ -84,7 +84,7 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setState
 
                   {stats.filter(x => x.value >= 8 && x.id === 1).map(q => 
                     <h1 className="text-success mt-3 text-wrap text-center font-300">
-                    Your health looks great, please keep it up. Remember to go for check-up at when due, exercise, eat healthy food, take more water, eat vegetables and fruits.
+                    Your health looks great, please keep it up. Remember to go for check-up as at when due, exercise, eat healthy food, take more water, eat vegetables and fruits.
                     </h1> 
                   )}
                 </div>
