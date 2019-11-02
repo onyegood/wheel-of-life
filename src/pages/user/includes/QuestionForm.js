@@ -150,7 +150,7 @@ const QuestionForm =  (props) => {
       { question === 6 &&
                 <div className={romance ? "form-group has-success" : "form-group"}>
                   <h2 className="form-control-label" htmlFor="inputSuccess1">Romance</h2>
-                  <p>Have you found happiness in love? Do you have a new partner or a committed partner on whom you can build and plan your future? </p>
+                  <p>Have you found happiness in love? Do you have a new partner or a committed partner? </p>
                   <p className="font-300-black">
                   On a scale of 1 to 10, rate your Romance Life?
                   </p>

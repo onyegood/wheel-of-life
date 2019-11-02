@@ -194,8 +194,7 @@ const Analyse = ({ stats, name, sumcount, setStep, setCount, setGender, setQuest
                 <div className="carousel-item min-height">
                   {stats.filter(x => x.value <= 4 && x.id === 7).map(q => 
                     <h1 className="text-danger mt-3 text-wrap font-300">
-                    Oh no! {name}, your personal growth is too poor. You may want to create a <b>Plan of Action (PA)</b>. A plan of action should include actions such as what you need to do and when to do them as that will support your goals. 
-                    It’s always best to have a written plan of action to avoid forgetting important tasks.
+                    Oh no! {name}, your personal growth is too poor. You may want to create a <b>Plan of Action (PA)</b>. A plan of action should include actions such as what you need to do and when to do them as that will support your goals.
                     </h1>
                   )}
 
