@@ -13,6 +13,7 @@ const ChangePasswordPage = lazy(() => import("../pages/auth/ChangePasswordPage")
 const ForgotPasswordPage = lazy(() => import("../pages/auth/ForgotPasswordPage"));
 const ResetPasswordPage = lazy(() => import("../pages/auth/ResetPasswordPage"));
 
+const UserDashboardPage = lazy(() => import("../pages/user/UserDashboardPage"));
 const HomePage = lazy(() => import("../pages/user/HomePage"));
 
 const Routes = (props) => (
@@ -21,9 +22,9 @@ const Routes = (props) => (
       <ToastContainer />
       <Switch>
         <Route path={["/home", "/"]} exact component={HomePage} /> 
-        {/* <UserRoute path="/dashboard" exact component={UserDashboardPage} /> */}
+        <Route path="/dashboard" exact component={UserDashboardPage} />
+
         {/* <UserRoute path="/profile" exact component={ProfilePage} /> */}
-        
         {/* <GuestRoute path="/" exact component={CheckToken} /> */}
         {/* <GuestRoute path="/login" exact component={LoginPage} />
         <GuestRoute path="/change-password/:token" exact component={ChangePasswordPage} />
