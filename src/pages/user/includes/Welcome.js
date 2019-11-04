@@ -4,7 +4,7 @@ import Axios from "axios";
 import { newBase } from "../../../base/nBase";
 
 const Welcome = ({ setStep }) => {
-  useEffect(() => {
+  {/*useEffect(() => {
     doCallHitmap();
   });
 
@@ -12,7 +12,7 @@ const Welcome = ({ setStep }) => {
     Axios.post(`${newBase}hitmaps`)
       .then(res => console.log(res.data.message))
       .catch(e => console.log(e));
-  };
+  };*/}
 
   return (
     <>
