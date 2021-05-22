@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7d1e4c4f86e956c71441ac1d1a7bb257",
+    "revision": "51a7b7f8cbcf89e70d397dedd9710859",
     "url": "/wheel-of-life/index.html"
   },
   {
