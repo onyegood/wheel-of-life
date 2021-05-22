@@ -1,0 +1,78 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  #sidebar-wrapper {
+    display: none;
+  }
+  #page-content-wrapper {
+    padding-left: 0 !important;
+  }
+  .gender-selected {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
+  .gender-selected img, .gender-card img {
+    height: 90px;
+  }
+  .gender-card {
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  .questions{
+    height: 150px;
+    width: 150px;
+    margin: auto;
+  }
+  .options img{
+    height: 40px;
+    width: 40px;;
+  }
+  .btn {
+    padding: 8%;
+  }
+  .home-page {
+    margin-top: 20% !important;
+  }
+  .top-space{
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
+  .top-space h2{
+    font-size: 45px;
+  }
+  .display{
+    display: none;
+  }
+  .mobile-btn-arrange .col-sm-6{
+    width: 50%;
+  }
+  .mobile-btn-arrange .col-sm-6 .btn {
+    padding: 16%;
+    margin-bottom: 20%;
+  }
+
+  .mobile-btn-arrange .col-sm-6 .cursor-pointer{
+    margin-bottom: 20%;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+  
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+
+}
